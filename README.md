@@ -1,5 +1,5 @@
 # ProgressView
-[中文版点我](https://github.com/WhiteDG/ProgressView/blob/master/README_CN.md)
+[涓枃鐗堢偣鎴慮(https://github.com/WhiteDG/ProgressView/blob/master/README_CN.md)
 
 ProgressView is a Custom View extend Progressbar to realize circular and horizontal ProgressBar with number.
 
