@@ -35,7 +35,7 @@ add the progressview in your layout.xml and set the attributes
 // style Circle
 <com.white.progressview.CircleProgressView
       android:id="@+id/circle_progress_normal"
-      android:layout_width="0dp"
+      android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_weight="1"
       android:padding="10dp"
@@ -79,7 +79,7 @@ circleProgressView.setProgressInTime(100,2500);
 #### HorizontalProgressView
 
 Name | Description
----|---
+:---:|:---:
 progressNormalColor | set the normal bar color
 progressReachColor | set the reach bar color
 progressTextColor | set the progress text color
@@ -96,7 +96,7 @@ progressTextSuffix | set the progress text suffix(default '%')
 #### CircleProgressView
 
 Name | Description
----|---
+:---:|:---:
 progressNormalColor | set the normal bar color
 progressReachColor | set the reach bar color
 progressTextColor | set the progress text color

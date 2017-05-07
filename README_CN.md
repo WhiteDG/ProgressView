@@ -36,7 +36,7 @@ dependencies {
 // 圆形进度条
 <com.white.progressview.CircleProgressView
       android:id="@+id/circle_progress_normal"
-      android:layout_width="0dp"
+      android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_weight="1"
       android:padding="10dp"
