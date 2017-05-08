@@ -7,6 +7,8 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
+import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.annotation.IntDef;
 import android.util.AttributeSet;
 import android.view.animation.AccelerateDecelerateInterpolator;
@@ -23,7 +25,7 @@ import java.lang.annotation.RetentionPolicy;
 public class CircleProgressView extends ProgressBar {
 
   @IntDef({PROGRESS_STYLE_NORMAL, PROGRESS_STYLE_FILL_IN,
-      PROGRESS_STYLE_FILL_IN_ARC, PROGRESS_STYLE_WAVE})
+      PROGRESS_STYLE_FILL_IN_ARC})
   @Retention(RetentionPolicy.SOURCE)
   public @interface ProgressStyle {
 
@@ -32,7 +34,6 @@ public class CircleProgressView extends ProgressBar {
   private static final int PROGRESS_STYLE_NORMAL = 0;
   private static final int PROGRESS_STYLE_FILL_IN = 1;
   private static final int PROGRESS_STYLE_FILL_IN_ARC = 2;
-  private static final int PROGRESS_STYLE_WAVE = 3;
 
   /**
    * 已完成进度条大小
@@ -596,8 +597,91 @@ public class CircleProgressView extends ProgressBar {
   }
 
   @Override
+  public Parcelable onSaveInstanceState() {
+    final Bundle bundle = new Bundle();
+    bundle.putParcelable(STATE, super.onSaveInstanceState());
+    // 保存当前样式
+    bundle.putInt(PROGRESS_STYLE, getProgressStyle());
+    bundle.putInt(RADIUS, getRadius());
+    bundle.putBoolean(IS_REACH_CAP_ROUND, isReachCapRound());
+    bundle.putInt(START_ARC, getStartArc());
+    bundle.putInt(INNER_BG_COLOR, getInnerBackgroundColor());
+    bundle.putInt(INNER_PADDING, getInnerPadding());
+    bundle.putInt(OUTER_COLOR, getOuterColor());
+    bundle.putInt(OUTER_SIZE, getOuterSize());
+    // 保存text信息
+    bundle.putInt(TEXT_COLOR, getTextColor());
+    bundle.putInt(TEXT_SIZE, getTextSize());
+    bundle.putFloat(TEXT_SKEW_X, getTextSkewX());
+    bundle.putBoolean(TEXT_VISIBLE, isTextVisible());
+    bundle.putString(TEXT_SUFFIX, getTextSuffix());
+    bundle.putString(TEXT_PREFIX, getTextPrefix());
+    // 保存已到达进度信息
+    bundle.putInt(REACH_BAR_COLOR, getReachBarColor());
+    bundle.putInt(REACH_BAR_SIZE, getReachBarSize());
+
+    // 保存未到达进度信息
+    bundle.putInt(NORMAL_BAR_COLOR, getNormalBarColor());
+    bundle.putInt(NORMAL_BAR_SIZE, getNormalBarSize());
+    return bundle;
+  }
+
+  @Override
+  public void onRestoreInstanceState(Parcelable state) {
+    if (state instanceof Bundle) {
+      final Bundle bundle = (Bundle) state;
+
+      mProgressStyle = bundle.getInt(PROGRESS_STYLE);
+      mRadius = bundle.getInt(RADIUS);
+      mReachCapRound = bundle.getBoolean(IS_REACH_CAP_ROUND);
+      mStartArc = bundle.getInt(START_ARC);
+      mInnerBackgroundColor = bundle.getInt(INNER_BG_COLOR);
+      mInnerPadding = bundle.getInt(INNER_PADDING);
+      mOuterColor = bundle.getInt(OUTER_COLOR);
+      mOuterSize = bundle.getInt(OUTER_SIZE);
+
+      mTextColor = bundle.getInt(TEXT_COLOR);
+      mTextSize = bundle.getInt(TEXT_SIZE);
+      mTextSkewX = bundle.getFloat(TEXT_SKEW_X);
+      mTextVisible = bundle.getBoolean(TEXT_VISIBLE);
+      mTextSuffix = bundle.getString(TEXT_SUFFIX);
+      mTextPrefix = bundle.getString(TEXT_PREFIX);
+
+      mReachBarColor = bundle.getInt(REACH_BAR_COLOR);
+      mReachBarSize = bundle.getInt(REACH_BAR_SIZE);
+      mNormalBarColor = bundle.getInt(NORMAL_BAR_COLOR);
+      mNormalBarSize = bundle.getInt(NORMAL_BAR_SIZE);
+
+      initPaint();
+      super.onRestoreInstanceState(bundle.getParcelable(STATE));
+      return;
+    }
+    super.onRestoreInstanceState(state);
+  }
+
+  @Override
   public void invalidate() {
     initPaint();
     super.invalidate();
   }
+
+  private static final String STATE = "state";
+  private static final String PROGRESS_STYLE = "progressStyle";
+  private static final String TEXT_COLOR = "textColor";
+  private static final String TEXT_SIZE = "textSize";
+  private static final String TEXT_SKEW_X = "textSkewX";
+  private static final String TEXT_VISIBLE = "textVisible";
+  private static final String TEXT_SUFFIX = "textSuffix";
+  private static final String TEXT_PREFIX = "textPrefix";
+  private static final String REACH_BAR_COLOR = "reachBarColor";
+  private static final String REACH_BAR_SIZE = "reachBarSize";
+  private static final String NORMAL_BAR_COLOR = "normalBarColor";
+  private static final String NORMAL_BAR_SIZE = "normalBarSize";
+  private static final String IS_REACH_CAP_ROUND = "isReachCapRound";
+  private static final String RADIUS = "radius";
+  private static final String START_ARC = "startArc";
+  private static final String INNER_BG_COLOR = "innerBgColor";
+  private static final String INNER_PADDING = "innerPadding";
+  private static final String OUTER_COLOR = "outerColor";
+  private static final String OUTER_SIZE = "outerSize";
 }

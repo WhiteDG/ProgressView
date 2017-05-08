@@ -53,7 +53,6 @@
       <enum name="Normal" value="0"/>
       <enum name="FillInner" value="1"/>
       <enum name="FillInnerArc" value="2"/>
-      <enum name="Wave" value="3"/>
     </attr>
     <attr format="color" name="innerProgressColor"/>
     <attr format="dimension" name="innerPadding"/>
