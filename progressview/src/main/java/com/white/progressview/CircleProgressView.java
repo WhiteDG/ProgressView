@@ -575,6 +575,8 @@ public class CircleProgressView extends ProgressBar {
 
   public void setInnerPadding(int innerPadding) {
     mInnerPadding = Utils.dp2px(getContext(), innerPadding);
+    int mInnerRadius = mRadius - mOuterSize / 2 - mInnerPadding;
+    rectInner = new RectF(-mInnerRadius, -mInnerRadius, mInnerRadius, mInnerRadius);
     invalidate();
   }
 
