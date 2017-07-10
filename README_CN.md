@@ -11,7 +11,7 @@ ProgressView是一个继承Progressbar的进度视图，目前实现了带数字
 在build.gradle中添加如下引用
 ```
 dependencies {
-    compile 'com.white:progressview:1.0.0'
+    compile 'com.white:progressview:1.0.1'
 }
 ```
 

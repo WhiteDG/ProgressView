@@ -11,7 +11,7 @@ ProgressView is a Custom View extend Progressbar to realize circular and horizon
 Add the depedency in your build.gradle. The library is distributed via jCenter.
 ```
 dependencies {
-    compile 'com.white:progressview:1.0.0'
+    compile 'com.white:progressview:1.0.1'
 }
 ```
 ## Usage
