@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <com.white.progressview.CircleProgressView
+            android:id="@+id/circle_progress_fill_in"
+            android:layout_width="wrap_content"
+            android:layout_height="160dp"
+            android:layout_weight="1"
+            android:progress="0"
+            app:progressStyle="FillInner"
+            app:progressTextColor="@android:color/white"
+            app:radius="40dp"
+            />
+
+        <com.white.progressview.CircleProgressView
+            android:id="@+id/circle_progress_normal"
+            android:layout_width="wrap_content"
+            android:layout_height="160dp"
+
+            android:layout_weight="1"
+            android:progress="0"
+            app:radius="40dp"
+            />
+
+        <com.white.progressview.CircleProgressView
+            android:id="@+id/circle_progress_fill_in_arc"
+            android:layout_width="wrap_content"
+            android:layout_height="160dp"
+
+            android:layout_weight="1"
+            android:progress="0"
+            app:innerPadding="1dp"
+            app:progressReachColor="@android:color/darker_gray"
+            app:progressStyle="FillInnerArc"
+            app:radius="40dp"
+            />
+    </LinearLayout>
+
+    <com.white.progressview.HorizontalProgressView
+        android:id="@+id/horizontal_progress"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:padding="16dp"
+        android:progress="0"
+        />
+
+    <android.support.v7.widget.AppCompatSeekBar
+        android:id="@+id/seek_bar_progress"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="48dp"
+        android:layout_marginRight="48dp"
+        android:layout_marginTop="32dp"/>
+
+    <android.support.v7.widget.AppCompatSeekBar
+        android:id="@+id/seek_bar_outer"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="48dp"
+        android:layout_marginRight="48dp"
+        android:layout_marginTop="16dp"
+        />
+
+    <android.support.v7.widget.AppCompatSeekBar
+        android:id="@+id/seek_bar_inner"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="48dp"
+        android:layout_marginRight="48dp"
+        android:layout_marginTop="16dp"/>
+
+    <com.larswerkman.lobsterpicker.sliders.LobsterShadeSlider
+        android:id="@+id/seek_bar_color"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="48dp"
+        android:layout_marginRight="48dp"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:onClick="toMainActivity"
+        android:text="see run demo"
+        />
+</LinearLayout>

@@ -3,7 +3,8 @@
 ProgressView是一个继承Progressbar的进度视图，目前实现了带数字进度的水平进度条以及圆形进度条，圆形进度条包括三种风格：普通环形进度，内部垂直填充进度以及内部环形填充进度。
 
 ## Demo
-![demo](https://github.com/WhiteDG/ProgressView/blob/master/screenshot/demo.gif)
+
+<img src='https://github.com/WhiteDG/ProgressView/blob/master/screenshot/demo.gif' height='600'/> <span>&nbsp;&nbsp;&nbsp;&nbsp;</span> <img src='https://github.com/WhiteDG/ProgressView/blob/master/screenshot/preview.gif' height='600'/>
 
 
 ## 下载
@@ -118,3 +119,20 @@ innerPadding | 设置内部圆与外部圆的间距(使用FillInnerArc样式时�
 outerColor | 设置外部圆环颜色(使用FillInnerArc样式时有用)
 outerSize | 设置外部圆环大小(使用FillInnerArc样式时有用)
 
+## LICENSE
+
+```
+Copyright 2017 Wh1te
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
