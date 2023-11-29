@@ -1,7 +1,7 @@
 # ProgressView
 [中文版点我](https://github.com/WhiteDG/ProgressView/blob/master/README_CN.md)
 
-ProgressView is a Custom View extend Progressbar to realize circular and horizontal ProgressBar with number.
+ProgressView is a custom view that extends ProgressBar to implement circular and horizontal progress bars with numerical indicators.
 
 ## Screenshots
 
@@ -18,9 +18,9 @@ dependencies {
 
 1. In the XML
 
-add the progressview in your layout.xml and set the attributes
+Add the `ProgressView` to `layout.xml` and configure the attributes.
 ```
-// style Horizontal
+<!-- Horizontal style -->
 <com.white.progressview.HorizontalProgressView
     android:id="@+id/progress100"
     android:layout_width="match_parent"
@@ -32,7 +32,7 @@ add the progressview in your layout.xml and set the attributes
     app:progressTextVisible="true"
     />
     
-// style Circle
+<!-- Circle style -->
 <com.white.progressview.CircleProgressView
       android:id="@+id/circle_progress_normal"
       android:layout_width="wrap_content"
@@ -48,7 +48,7 @@ add the progressview in your layout.xml and set the attributes
 ```
 2. In the Activity
 
-you can also set all of the attributes in activity 
+You can also configure attributes directly in the activity.
 ```
 horizontalProgressView.setXXXX();
 // for example:
@@ -57,7 +57,7 @@ horizontalProgressView.setReachBarSize(4);
 horizontalProgressView.setProgressPosition(HorizontalProgressView.TOP);
 ...
 ```
-and set progress with anim in time
+and set progress with animation in time
 ```
 HorizontalProgressView horizontalProgressView = (HorizontalProgressView) findViewById(R.id.progress100);
 // set progress 100 with anim in 2500ms 
